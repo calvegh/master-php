@@ -1,0 +1,4 @@
+CREATE TABLE god(
+    id int,
+    name varchar(255)
+)
