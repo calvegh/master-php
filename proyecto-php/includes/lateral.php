@@ -6,12 +6,13 @@
         <div id = "usuario-logueado" class="bloque">
             <h3>Bienvenido, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos']; ?> </h3>
            <!--botones-->
-           <a href="cerrar.php" class="boton boton-verde">Crear entradas</a> 
-           <a href="cerrar.php" class="boton boton">Crear categorias</a> 
-           <a href="cerrar.php" class="boton boton-naranja">Mis datos</a> 
+           <a href="crear-entradas.php" class="boton boton-verde">Crear entradas</a> 
+           <a href="crear-categoria.php" class="boton boton">Crear categorias</a> 
+           <a href="mis-datos.php" class="boton boton-naranja">Mis datos</a> 
            <a href="cerrar.php" class="boton boton-rojo">Cerrar Sesión</a> 
         </div>
     <?php endif; ?>
+           <?php if(!isset($_SESSION['usuario'])):?> 
             <div id = "login" class="bloque">
                 <h3>Identificate</h3>
                 <?php if(isset($_SESSION['error_login'])): ?>
@@ -58,4 +59,5 @@
                 </form>
                 <?php borrarErrores()?>
             </div>
+            <?php endif?>
         </aside>
